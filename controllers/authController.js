@@ -34,7 +34,7 @@ router.post('/register', async (req, res) => {
         });
 
         await newUser.save();
-        res.redirect('/auth/login'); // Redirigir al login después de registrarse
+        res.redirect('/login'); // Redirigir al login después de registrarse
     } catch (error) {
         res.status(500).send('Error al registrar el usuario');
     }
