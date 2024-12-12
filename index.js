@@ -21,8 +21,12 @@ app.use(session({
 // Motor de plantillas
 app.set('view engine', 'ejs');
 
+app.get('/', (req, res) => {
+  res.redirect('/auth/login'); // Redirige a la ruta de mangas
+});
+
 // Rutas
-app.use('/', authController); // Rutas para login y register
+app.use('/auth', authController); // Rutas para login y register
 app.use('/', mangaController);  // Rutas para mangas
 
 mongoose.connect('mongodb+srv://elias12:mariobros123@xiaomi.7besd.mongodb.net/TiendadeMangas')
